@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.common.mapper.UserInfoMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.common.domain.UserInfo">
+            <id property="userId" column="user_id" jdbcType="INTEGER"/>
+            <result property="username" column="username" jdbcType="VARCHAR"/>
+            <result property="passwordHash" column="password_hash" jdbcType="VARCHAR"/>
+            <result property="passwordSalt" column="password_salt" jdbcType="VARCHAR"/>
+            <result property="fullName" column="full_name" jdbcType="VARCHAR"/>
+            <result property="email" column="email" jdbcType="VARCHAR"/>
+            <result property="phoneNumber" column="phone_number" jdbcType="VARCHAR"/>
+            <result property="role" column="role" jdbcType="OTHER"/>
+            <result property="permissions" column="permissions" jdbcType="VARCHAR"/>
+            <result property="accountStatus" column="account_status" jdbcType="OTHER"/>
+            <result property="registrationIp" column="registration_ip" jdbcType="VARCHAR"/>
+            <result property="lastLoginIp" column="last_login_ip" jdbcType="VARCHAR"/>
+            <result property="avatarUrl" column="avatar_url" jdbcType="VARCHAR"/>
+            <result property="netName" column="net_name" jdbcType="VARCHAR"/>
+            <result property="registrationTime" column="registration_time" jdbcType="TIMESTAMP"/>
+            <result property="lastLoginTime" column="last_login_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id,username,password_hash,
+        password_salt,full_name,email,
+        phone_number,role,permissions,
+        account_status,registration_ip,last_login_ip,
+        avatar_url,net_name,registration_time,
+        last_login_time
+    </sql>
+</mapper>

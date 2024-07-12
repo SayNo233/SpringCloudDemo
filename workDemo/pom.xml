@@ -1,30 +1,18 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <!-- 定义Maven POM文件的XML命名空间和模式位置 -->
     <modelVersion>4.0.0</modelVersion>
-    <!-- Maven POM模型版本 -->
 
-    <parent>    <!-- 父POM定义 -->
-        <groupId>com.example</groupId>  <!-- 父项目的组ID -->
-        <artifactId>parent-project</artifactId>  <!-- 父项目的唯一标识符 -->
-        <version>1.0-SNAPSHOT</version> <!-- 父项目的版本号 -->
+    <parent>
+        <groupId>com.example</groupId>
+        <artifactId>parent-project</artifactId>
+        <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>common</artifactId>
-    <!-- 子项目的唯一标识符 -->
+    <artifactId>workDemo</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <!-- 子项目的版本号 -->
 
     <dependencies>
-        <!-- 定义依赖列表 -->
-
-<!--        &lt;!&ndash; Spring Boot 基础依赖 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-web</artifactId>-->
-<!--        </dependency>-->
-
         <!-- Spring Boot Starter Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -33,65 +21,93 @@
         </dependency>
 
         <dependency>
-            <!-- Spring Cloud Gateway -->
+            <groupId>com.example</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- Spring Cloud LoadBalancer -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+
+        <!-- Spring Cloud Gateway -->
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
 
-        <!-- Spring Boot Starter Mail -->
+        <!-- Nacos服务发现 -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-mail</artifactId>
-        </dependency>
-
-        <dependency>
-            <!-- Nacos服务发现 -->
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>2.2.5.RELEASE</version>
         </dependency>
 
+        <!-- Nacos配置管理 -->
         <dependency>
-            <!-- Nacos配置管理 -->
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>2.2.5.RELEASE</version>
         </dependency>
+
+        <!-- Spring Cloud Starter OpenFeign -->
         <dependency>
-            <!-- OpenFeign客户端 -->
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+
+        <!-- RabbitMQ消息驱动 -->
         <dependency>
-            <!-- RabbitMQ消息驱动 -->
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
         </dependency>
 
+        <!-- Spring Boot Starter AMQP -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+
+        <!-- MyBatis Plus Starter -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.5.3.1</version>
         </dependency>
 
+        <!-- MySQL Connector -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <version>8.2.0</version>
         </dependency>
 
+        <!-- JUnit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>com.example</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
-        <!-- 构建配置 -->
         <plugins>
-            <!-- 插件列表 -->
+            <!-- Spring Boot Maven插件 -->
             <plugin>
-                <!-- Spring Boot Maven插件 -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>

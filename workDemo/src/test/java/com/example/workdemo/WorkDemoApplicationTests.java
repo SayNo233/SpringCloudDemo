@@ -1,16 +1,13 @@
-package com.example.common;
+package com.example.workdemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CommonApplicationTests {
+class WorkDemoApplicationTests {
 
     @Test
     void contextLoads() {
     }
-
-    @Test
-    void textDemo01(){}
 
 }

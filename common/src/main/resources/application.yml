@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver # 数据库驱动类
+    url: jdbc:mysql://localhost:3306/mydatabase?useSSL=false&serverTimezone=UTC # 数据库连接URL
+    username: root # 数据库用户名
+    password: He301634. # 数据库密码
+  application:
+    name: common # 应用名称，确保不为空
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # 本地 Nacos 服务器地址
+      config:
+        server-addr: localhost:8848 # 本地 Nacos 配置服务器地址
+        file-extension: yaml # 配置文件格式
+  mail:
+    host: smtp.qq.com # SMTP服务器地址，使用QQ邮箱的SMTP服务器
+    port: 465 # SMTP服务器端口，QQ邮箱使用465端口
+    username: 729421463@qq.com # 发件人邮箱地址，这里填写您的QQ邮箱
+    password: tjipmahxuibcbahf # 发件人邮箱的授权码，不是登录密码
+    properties:
+      mail:
+        smtp:
+          auth: true # 开启SMTP认证
+          starttls:
+            enable: true # 启用TLS
+          ssl:
+            enable: true # 启用SSL
+server:
+  port: 8081 # 服务器端口，避免端口冲突
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*' # 公开所有管理端点
+  endpoint:
+    health:
+      show-details: always # 始终显示健康详情
